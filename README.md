@@ -86,6 +86,13 @@ border-color: A775F1;
   background-position: top right 10.5rem;
 }
 ```
+5. **Understanding opacity values in CSS colors**
+
+  I learned that the rgb() function does not support opacity values. When opacity is required, rgba() must be used instead. CSS opacity values range from 0 to 1, not percentages, so values from design tools like Figma need to be converted. Figma opacity 24.74% converts to 0.2474
+
+```css
+box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.2474);
+```
 
 ### Continued development
 
@@ -101,6 +108,5 @@ Going forward, I want to focus on improving my ability to match component sizes 
 
 - Frontend Mentor - [@keerthana769](https://www.frontendmentor.io/profile/keerthana769)
 - LinkedIn - [@keerthana-gurram](https://www.linkedin.com/in/keerthana-gurram/)
-
 
 
