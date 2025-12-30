@@ -152,9 +152,9 @@ article{
 @media(min-width:1440px){
     body{
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    margin-top: 229px;
     }
     .container{
     display: grid;
