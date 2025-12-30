@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub Repository](https://github.com/keerthana769/Testimonials-Grid-Section/)
+- Live Site URL: [Live Demo](https://keerthana769.github.io/Testimonials-Grid-Section/)
 
 ## My process
 
@@ -44,6 +44,7 @@ Users should be able to:
 ### What I learned
 
 1. **Using border properties more clearly and explicitly**
+
   Instead of relying on shorthand, I learned how defining border styles and colors separately can improve clarity and control.
 ```css
 border-style: solid;
@@ -51,6 +52,7 @@ border-color: A775F1;
 ```
 
 2. **Preloading fonts to improve performance**
+
   I learned how to preload custom fonts to ensure they load faster and reduce layout shifts during page rendering.
 ```html
 <link
@@ -62,6 +64,7 @@ border-color: A775F1;
 ```
 
 3. **Defining custom fonts using @font-face**
+
   I practiced correctly setting up custom fonts with proper font weights and `font-display: swap` to improve user experience during loading.
 ```css
 @font-face {
@@ -74,6 +77,7 @@ border-color: A775F1;
 ```
 
 4. **Positioning background images precisely**
+
   I learned how to control decorative background images using background-position to achieve better visual alignment across screen sizes.
 ```css
 .feedback1 {
