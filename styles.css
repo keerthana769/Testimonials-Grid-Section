@@ -153,8 +153,9 @@ article{
     body{
     display: flex;
     justify-content: center;
+    height: 100vh;
     align-items: center;
-    margin-top: 229px;
+    /* margin-top: 229px; */
     }
     .container{
     display: grid;
