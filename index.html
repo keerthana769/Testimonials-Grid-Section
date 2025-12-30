@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Testimonials Grid Section</title>
+
+  <link
+    rel="preload"
+    href="fonts/barlow-semi-condensed-v16-latin-500.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin />
+
+    <link
+    rel="preload"
+    href="fonts/barlow-semi-condensed-v16-latin-600.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin />
+
+  <style>
+        /* barlow-semi-condensed-500 - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Barlow Semi Condensed';
+      font-style: normal;
+      font-weight: 500;
+      src: url('../fonts/barlow-semi-condensed-v16-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* barlow-semi-condensed-600 - latin */
+    @font-face {
+      font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: 'Barlow Semi Condensed';
+      font-style: normal;
+      font-weight: 600;
+      src: url('../fonts/barlow-semi-condensed-v16-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    :root{
+      /* primary */
+      --clr-purple-50: hsl(260, 100%, 95%);
+      --clr-purple-300: hsl(264, 82%, 80%);
+      --clr-purple-500: hsl(263, 55%, 52%);
+      /* neutral */
+      --clr-white: hsl(0, 0%, 100%);
+      --clr-grey-100: hsl(214, 17%, 92%);
+      --clr-grey-200: hsl(0, 0%, 81%);
+      --clr-grey-400: hsl(224, 10%, 45%);
+      --clr-grey-500: hsl(217, 19%, 35%);
+      --clr-dark-blue: hsl(219, 29%, 14%);
+      --clr-black: hsl(0, 0%, 7%);
+      /* text */
+      --text-1-b-semibold: 600 20px/120% "Barlow Semi Condensed", sans-serif;
+      --text-2-b-medium: 500 13px/110% "Barlow Semi Condensed", sans-serif;
+      --text-3-b-medium: 500 13px/140% "Barlow Semi Condensed", sans-serif;
+      --text-4-b-medium: 500 11px/110% "Barlow Semi Condensed", sans-serif;
+      /* letter spacing */
+      --ls-0: 0;
+    }
+    *, *::after, *::before{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      font-size: 13px;
+      background-color: #F6F5F6;
+      margin-block: 73px;
+      margin-inline: 35px;
+    }
+    .author{
+      display: flex;
+      gap: 17px;
+      align-items: center;
+
+    }
+    img{
+      border-radius: 100%;
+      height:28px;
+    }
+    .author__img1, .author__img4{
+      border-style: solid;
+      border-color: #A775F1;
+      border-width: 2px;
+    }
+    .author__name{
+      font: var(--text-2-b-medium);
+      letter-spacing: var(--ls-0);
+      margin-bottom: 4px;
+    }
+    .author__status{
+      font: var(--text-4-b-medium);
+      letter-spacing: var(--ls-0);
+    }
+    .content__title{
+      font: var(--text-1-b-semibold);
+      letter-spacing: var(--ls-0);
+    }
+    .content__description{
+      font: var(--text-3-b-medium);
+      letter-spacing: var(--ls-0);
+    }
+    .feedback1{
+      background-color: var(--clr-purple-500);
+    }
+    .feedback2{
+      background-color: var(--clr-grey-500);
+    }
+    .feedback3{
+      background-color: var(--clr-white);
+    }
+    .feedback4{
+      background-color: var(--clr-dark-blue);
+    }
+    .feedback5{
+      background-color: var(--clr-white);
+    }
+    article{
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .card{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 40px 60px 50px 47px rgb(72, 85, 106, 24.74%);
+    }
+    .container{
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .name1, .title1, .title2, .name2, .name4, .status4{
+      color: var(--clr-white);
+    }
+    .status1, .description1{
+      color: var(--clr-purple-50);
+    }
+    .description2, .description4{
+      color: var(--clr-grey-100);
+    }
+    .status2, .status5{
+      color: #A3AAB4; /*grey 300 not present in styles file*/
+    }
+    .title3, .name3, .title5, .name5{
+      color: var(--clr-grey-500);
+    }
+    .description3, .status3, .description5{
+      color: var(--clr-grey-400);
+    }
+    .title4{
+      color: var(--clr-grey-200);
+    }
+
+    @media(min-width:768px){
+      body{
+        margin-block: 83px;
+        margin-inline: 60px;
+      }
+      .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+      .feedback1, .feedback4, .feedback5{
+        grid-column: span 2;
+      }
+      .feedback1{
+        background-image: url("./images/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-position: top right 10.5rem;
+      }
+
+    }
+
+    @media(min-width:1440px){
+      body{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        margin-top: 229px;
+        margin-left: 165px;
+        margin-right: 161px;
+      }
+      .container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 1114px;
+      }
+      .feedback5{
+        grid-row: 1/-1;
+        grid-column: 4;
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="feedback1 card">
+      <header class="author">
+        <img src="./images/image-daniel.jpg" alt="Profile image of Daniel Clifford" class="author__img1">
+        <div>
+          <p class="author__name name1">Daniel Clifford</p>
+          <span class="author__status status1">Verified Graduate</span>
+        </div>
+      </header>
+      <!-- <section class="content"> -->
+        <h2 class="content__title title1">I received a job offer mid-course, and the subjects I learned were current, if not more so, 
+        in the company I joined. I honestly feel I got every penny’s worth.</h2>
+        <p class="content__description description1">“ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a 
+        transition and have heard some people who had an amazing experience here. I signed up 
+        for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
+        The next 12 weeks was the best - and most grueling - time of my life. Since completing 
+        the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”</p>
+      <!-- </section> -->
+    </article>
+
+    <article class="feedback2 card">
+      <header class="author">
+        <img src="./images/image-jonathan.jpg" alt="Profile image of Jonathan Walters" class="author__img2">
+        <div>
+          <p class="author__name name2">Jonathan Walters</p>
+          <span class="author__status status2">Verified Graduate</span>
+        </div>
+      </header>
+      <!-- <section class="content"> -->
+        <h2 class="content__title title2">The team was very supportive and kept me motivated</h2>
+        <p class="content__description description2">  “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer 
+  for a big company. This was one of the best investments I’ve made in myself. ”</p>
+      <!-- </section> -->
+    </article>
+
+    <article class="feedback3 card">
+      <header class="author">
+        <img src="./images/image-jeanette.jpg" alt="Profile image of Jeanette Harmon" class="author__img3">
+        <div>
+          <p class="author__name name3">Jeanette Harmon</p>
+          <span class="author__status status3">Verified Graduate</span>
+        </div>
+      </header>
+      <!-- <section class="content"> -->
+        <h2 class="content__title title3">An overall wonderful and rewarding experience</h2>
+        <p class="content__description description3">“ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living 
+  while doing something I love. ”</p>
+      <!-- </section> -->
+    </article>
+
+    <article class="feedback4 card">
+      <header class="author">
+        <img src="./images/image-patrick.jpg" alt="Profile image of Patrick Abrams"  class="author__img4">
+        <div>
+          <p class="author__name name4">Patrick Abrams</p>
+          <span class="author__status status4">Verified Graduate</span>
+        </div>
+      </header>
+      <!-- <section class="content"> -->
+        <h2 class="content__title title4">Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and 
+  learning from their experiences was easy.</h2>
+        <p class="content__description description4">“ The staff seem genuinely concerned about my progress which I find really refreshing. The program 
+  gave me the confidence necessary to be able to go out in the world and present myself as a capable 
+  junior developer. The standard is above the rest. You will get the personal attention you need from 
+  an incredible community of smart and amazing people. ”</p>
+      <!-- </section> -->
+    </article>
+
+    <article class="feedback5 card">
+      <header class="author">
+        <img src="./images/image-kira.jpg" alt="Profile image of Kira Whittle" class="author__img5">
+        <div>
+          <p class="author__name name5">Kira Whittle</p>
+          <span class="author__status status5">Verified Graduate</span>
+        </div>
+      </header>
+      <!-- <section class="content"> -->
+        <h2 class="content__title title5">Such a life-changing experience. Highly recommended!</h2>
+        <p class="content__description description5">“ Before joining the bootcamp, I’ve never written a line of code. I needed some structure from 
+  professionals who can help me learn programming step by step. I was encouraged to enroll by a former 
+  student of theirs who can only say wonderful things about the program. The entire curriculum and staff 
+  did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team 
+  project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial 
+  could ever have. In fact, I’ve often referred to it during interviews as an example of my developent 
+  experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 
+  100% recommend! ”</p>
+      <!-- </section> -->
+    </article>
+  </main>
+</body>
+</html>
