@@ -138,10 +138,7 @@ outline: 1px solid red;
 
 
 @media(min-width:48rem){
-    body{
-    margin-block: 5.1875rem;
-    margin-inline: 3.75rem;
-    }
+
     .container{
     display: grid;
     grid-template-columns: 1fr 1fr;
