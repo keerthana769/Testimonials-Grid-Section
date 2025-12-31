@@ -48,6 +48,10 @@ body{
     background-color: #F6F5F6;
     margin-block: 4.5625rem;
     margin-inline: 2.1875rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
 }
 .author{
     display: flex;
@@ -157,11 +161,7 @@ outline: 1px solid red;
 
 @media(min-width:90rem){
     body{
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    align-items: center;
-    /* margin-top: 229px; */
+        margin: 0;
     }
     .container{
     display: grid;
