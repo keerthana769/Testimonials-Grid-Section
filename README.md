@@ -11,8 +11,6 @@
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
 
 ## Overview
 
@@ -24,7 +22,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/Screenshot%20(376).png)
+![](./images/Screenshot.png)
 
 ### Links
 
